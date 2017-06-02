@@ -6,3 +6,61 @@ body {
 .Typist span{
 	display: none;
 }
+.papercontrolesclass{
+  z-index: 1 !important;
+  padding: 5px 12px;
+  margin-top: 5px;
+  display: block;
+}
+.floatrightnomargin{
+  float: right;
+}
+.toggleswitch{
+  width: initial !important;
+  margin:7px 0px 4px;
+}
+.actioncontroles{
+  height: 36px !important;
+  width: 36px !important;
+  padding: 0!important;
+  margin-right: 4px !important;
+  float: right;
+}
+.dialogcontroles > div > div {
+  width: 90% !important;
+}
+.dialogcontroles > div > div>div>div{
+  padding:16px !important;
+  border-color:transparent !important;
+}
+.dialogcontroles > div > div>div>h3{
+  border-color: rgba(0,0,0,0.15) !important;
+}
+.width100>div{
+  width:100% !important;
+}
+.sliderbackground>div>div>div:nth-child(3){
+    width: 18px !important;
+    border:none !important;
+    height: 18px !important;
+    border-radius: 50% !important;
+    background-color: rgb(248, 248, 248) !important;
+    box-shadow: rgba(0, 0, 0, 0.368627) 0px 1px 4px 0px !important;
+}
+.sliderbackground>div>div>div:nth-child(3)>div{
+  top:3px !important;
+  left:3px !important;
+}
+.sliderbackground>div>div{
+  height:0 !important;
+}
+.sliderbackground>div{
+  background: -webkit-linear-gradient(,black,transparent,white);
+  background: -o-linear-gradient(to right,black,transparent,white);
+  background: -moz-linear-gradient(to right,black,transparent,white);
+  background: linear-gradient(to right,black,transparent,white);
+}
+.atuadores{
+  margin-top: 5px;
+  margin-bottom:5px;
+}
