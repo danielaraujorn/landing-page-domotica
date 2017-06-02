@@ -1,17 +1,16 @@
 import React, {Component} from 'react'
 import Paper from 'material-ui/Paper'
 import Toggle from 'material-ui/Toggle'
-import CircularProgress from 'material-ui/CircularProgress'
-import {rgbxToHex,temConfig,ehAtuador,isValid,getSession,setSession} from './utils'
+import {rgbxToHex,temConfig} from './utils'
 import ConfigDialog from './controladores/configdialog'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import luz1 from './luz.svg'
 import {
-    cyan300, cyan400, cyan500, cyan700, cyan900,
-    grey200, grey300, grey400, grey500,grey600, grey700, grey800, grey900,
+    cyan500, cyan700, cyan900,
+    grey200, grey300, grey400, grey500,grey600, grey700, grey800,
     white,
 } from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import ReactTooltip from 'react-tooltip'
 export const lightTheme = getMuiTheme({
   appBar: {
     textColor: '#fff',
@@ -94,17 +93,26 @@ export default class exibicao extends Component{
             <div className="row">
               <div className="col-xs-10 col-xs-offset-1 col-md-4">
                 <div className="atuadores col-xs-4 col-xs-offset-2">
-                  <LuzIcon cor={rgbxToHex({r:255,g:255,b:0,x:0.5*(this.state.dispositivo1Value/255)})} />
+                  <a data-tip={dispositivo1.nome} >
+                      <LuzIcon cor={rgbxToHex({r:255,g:255,b:0,x:0.5*(this.state.dispositivo1Value/255)})} />
+                  </a>
                 </div>
                 <div className="atuadores col-xs-4">
-                  <LuzIcon cor={rgbxToHex(this.state.dispositivo2Value)} />
+                  <a data-tip={dispositivo2.nome} >
+                      <LuzIcon cor={rgbxToHex(this.state.dispositivo2Value)} />
+                  </a>
                 </div>
                 <div className="atuadores col-xs-4 col-xs-offset-2">
-                  <LuzIcon cor={this.state.dispositivo3Value} />
+                  <a data-tip={dispositivo3.nome} >
+                      <LuzIcon cor={this.state.dispositivo3Value} />
+                  </a>
                 </div>
                 <div className="atuadores col-xs-4">
-                  <LuzIcon cor="#00ff00" />
+                  <a data-tip={dispositivo4.nome} >
+                      <LuzIcon cor="#00ff00" />
+                  </a>
                 </div>
+                <ReactTooltip />
               </div>
               <div className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
                 <DispositivoUnico value={this.state.dispositivo1Value} onChange={this.dispositivo1Change} dispositivo={dispositivo1}/>
