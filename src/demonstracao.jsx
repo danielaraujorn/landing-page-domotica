@@ -11,6 +11,7 @@ import {
 } from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import ReactTooltip from 'react-tooltip'
+import Casa from './casa.jsx'
 export const lightTheme = getMuiTheme({
   appBar: {
     textColor: '#fff',
@@ -36,89 +37,114 @@ export const lightTheme = getMuiTheme({
   },
 })
 const dispositivo1={
-  nome:"intensidade",
-  uuid_tipo:'dca4d0c86e8649829559d5e9ec26a2dc'
-}
-const dispositivo2={
-  nome:"luz rgb",
+  nome:"grupo terreo",
   uuid_tipo:'1e18bdd9716143c992adec71dc4db4e8'
 }
+const dispositivo2={
+  nome:"luz quarto",
+  uuid_tipo:'dca4d0c86e8649829559d5e9ec26a2dc'
+}
 const dispositivo3={
-  nome:"lampada",
+  nome:"luz escritorio",
   uuid_tipo:'f911a1a991864d1a95c3bd40177ee43c'
 }
 const dispositivo4={
   nome:"ar condicionado",
-  uuid_tipo:'ad4394d628c24982aced6748a0dc6235'
+  uuid_tipo:'1e18bdd9716143c992adec71dc4db4e8'
+}
+const dispositivo5={
+  nome:"Cozinha",
+  uuid_tipo:'1e18bdd9716143c992adec71dc4db4e8'
 }
 
 export default class exibicao extends Component{
   constructor(props) {
     super(props)
     this.state = {
-      dispositivo1Value:255,
-      dispositivo2Value:{r:255,g:255,b:0,x:0.5},
-      dispositivo3Value:"#FFFF00",
-      dispositivo4Value:"#FF00FF"
-    }
-  }
-  dispositivo1Change=(value,estado)=>{
-    if(estado===1){
-      this.setState({dispositivo1Value:value})
-    }else if(estado===0){
-      this.setState({dispositivo1Value:0})
+      dispositivo1Value:{r:88,g:190,b:227,x:0.5},
+      dispositivo2Value:255,
+      dispositivo3Value:"#58BEE3",
+      dispositivo4Value:{r:88,g:190,b:227,x:0.5},
+      dispositivo5Value:{r:88,g:190,b:227,x:0.5},
+      dispositivo1Estado:1,
+      dispositivo2Estado:1,
+      dispositivo3Estado:1,
+      dispositivo4Estado:1,
+      dispositivo5Estado:1
     }
   }
   dispositivo2Change=(value,estado)=>{
+    this.setState({dispositivo2Estado:estado})
     if(estado===1){
       this.setState({dispositivo2Value:value})
     }else if(estado===0){
-      this.setState({dispositivo2Value:{r:255,g:255,b:0,x:0}})
+      this.setState({dispositivo2Value:0})
     }
   }
-  dispositivo3Change=(value,estado)=>{
+  dispositivo1Change=(value,estado)=>{
+    this.setState({dispositivo1Estado:estado})
+    this.setState({dispositivo4Estado:estado})
+    this.setState({dispositivo5Estado:estado})
     if(estado===1){
-      this.setState({dispositivo3Value:"#FFFF00"})
+      this.setState({dispositivo4Value:value})
+      this.setState({dispositivo5Value:value})
+      this.setState({dispositivo1Value:value})
     }else if(estado===0){
-      this.setState({dispositivo3Value:"#000"})
+      this.setState({dispositivo1Value:{r:88,g:190,b:227,x:0}})
+      this.setState({dispositivo4Value:{r:88,g:190,b:227,x:0}})
+      this.setState({dispositivo5Value:{r:88,g:190,b:227,x:0}})
     }
   }
   dispositivo4Change=(value,estado)=>{
-    console.log("dispositivo4",value,estado)
+    this.setState({dispositivo4Estado:estado})
+    if(estado===1){
+      this.setState({dispositivo4Value:value})
+      if(this.state.dispositivo5Estado)
+        this.setState({dispositivo1Estado:estado})
+    }else if(estado===0){
+      this.setState({dispositivo1Estado:estado})
+      this.setState({dispositivo4Value:{r:88,g:190,b:227,x:0}})
+    }
+  }
+  dispositivo5Change=(value,estado)=>{
+    this.setState({dispositivo5Estado:estado})
+    if(estado===1){
+      this.setState({dispositivo5Value:value})
+      if(this.state.dispositivo4Estado)
+        this.setState({dispositivo1Estado:estado})
+    }else if(estado===0){
+      this.setState({dispositivo1Estado:estado})
+      this.setState({dispositivo5Value:{r:88,g:190,b:227,x:0}})
+    }
+  }
+  dispositivo3Change=(value,estado)=>{
+    this.setState({dispositivo3Estado:estado})
+    if(estado===1){
+      this.setState({dispositivo3Value:"#58BEE3"})
+    }else if(estado===0){
+      this.setState({dispositivo3Value:"#000"})
+    }
   }
   render(){
     return (
         <MuiThemeProvider muiTheme={lightTheme}>
           <div className="container">
-            <div className="row">
-              <div className="col-xs-10 col-xs-offset-1 col-md-4">
-                <div className="atuadores col-xs-4 col-xs-offset-2">
-                  <a data-tip={dispositivo1.nome} >
-                      <LuzIcon cor={rgbxToHex({r:255,g:255,b:0,x:0.5*(this.state.dispositivo1Value/255)})} />
-                  </a>
-                </div>
-                <div className="atuadores col-xs-4">
-                  <a data-tip={dispositivo2.nome} >
-                      <LuzIcon cor={rgbxToHex(this.state.dispositivo2Value)} />
-                  </a>
-                </div>
-                <div className="atuadores col-xs-4 col-xs-offset-2">
-                  <a data-tip={dispositivo3.nome} >
-                      <LuzIcon cor={this.state.dispositivo3Value} />
-                  </a>
-                </div>
-                <div className="atuadores col-xs-4">
-                  <a data-tip={dispositivo4.nome} >
-                      <LuzIcon cor="#00ff00" />
-                  </a>
-                </div>
+            <div className="row controlando" >
+              <div className="col-xs-8 col-xs-offset-2 col-sm-4">
+                <Casa
+                 primeiroSala={rgbxToHex(this.state.dispositivo4Value)}
+                 primeiro={rgbxToHex(this.state.dispositivo5Value)}
+                 quarto={rgbxToHex({r:88,g:190,b:227,x:0.5*(this.state.dispositivo2Value/255)})}
+                 escritorio={this.state.dispositivo3Value}
+                 />
                 <ReactTooltip />
               </div>
-              <div className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
-                <DispositivoUnico value={this.state.dispositivo1Value} onChange={this.dispositivo1Change} dispositivo={dispositivo1}/>
-                <DispositivoUnico value={this.state.dispositivo2Value} onChange={this.dispositivo2Change} dispositivo={dispositivo2}/>
-                <DispositivoUnico value={this.state.dispositivo3Value} onChange={this.dispositivo3Change} dispositivo={dispositivo3}/>
-                <DispositivoUnico value={this.state.dispositivo4Value} onChange={this.dispositivo4Change} dispositivo={dispositivo4}/>
+              <div style={{padding:0}} className="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1">
+                <DispositivoUnico estado={this.state.dispositivo1Estado} value={this.state.dispositivo1Value} onChange={this.dispositivo1Change} dispositivo={dispositivo1}/>
+                <DispositivoUnico estado={this.state.dispositivo2Estado} value={this.state.dispositivo2Value} onChange={this.dispositivo2Change} dispositivo={dispositivo2}/>
+                <DispositivoUnico estado={this.state.dispositivo3Estado} value={this.state.dispositivo3Value} onChange={this.dispositivo3Change} dispositivo={dispositivo3}/>
+                <DispositivoUnico estado={this.state.dispositivo4Estado} value={this.state.dispositivo4Value} onChange={this.dispositivo4Change} dispositivo={dispositivo4}/>
+                <DispositivoUnico estado={this.state.dispositivo5Estado} value={this.state.dispositivo5Value} onChange={this.dispositivo5Change} dispositivo={dispositivo5}/>
               </div>
             </div>
           </div>
@@ -126,22 +152,10 @@ export default class exibicao extends Component{
       )
   }
 }
-class LuzIcon extends Component{
-  render() {
-    return(
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<title>light-bulb</title>
-<path d="M256,0C114.61,0,0,114.62,0,256S114.61,512,256,512,512,397.38,512,256,397.37,0,256,0Zm-2.12,372.85c-22,0-39.84-18.91-39.84-42.26h79.68C293.71,353.94,275.87,372.85,253.87,372.85Zm37-64.46H216.9c-2-21.77-53.72-40.74-53.72-95.15,0-58,43.39-88.79,90.68-90h0c47.3,1.17,90.68,31.93,90.68,90C344.56,267.65,292.83,286.62,290.84,308.39Z" fill="#fff"/>
-<path d="M293.71,330.59c0,23.35-17.84,42.26-39.84,42.26S214,353.94,214,330.59Z" fill={this.props.cor}/>
-<path d="M344.55,213.24c0,54.41-51.72,73.38-53.71,95.15H216.9c-2-21.77-53.72-40.74-53.72-95.15,0-58,43.39-88.79,90.68-90h0C301.17,124.46,344.55,155.22,344.55,213.24Z" fill={this.props.cor}/></svg>
-       )
-  }
-}
  class DispositivoUnico extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      estado:1,
       open: false,
       value:this.props.value,
       disabled:false,
@@ -154,28 +168,25 @@ class LuzIcon extends Component{
     this.setState({open: false})
   }
   handleChangeValue=(newValue,newEstado)=>{
-   	this.setState({value:newValue,estado:newEstado})
     this.props.onChange(newValue,newEstado)
   }
 
   handleOn=(event,checked) => {
     if(event.target.checked===true){
       //this.props.putDispositivoControle(this.props.dispositivo.uuid,"0")
-      this.setState({estado: 0})
       this.props.onChange(this.state.value,0)
     }else if(this.state.value!==0){
       //this.props.putDispositivoControle(this.props.dispositivo.uuid,this.state.value)
-      this.setState({estado: 1})
       this.props.onChange(this.state.value,1)
     }
   }
   render() {
     let styletoggle, vartoggle
-    if(this.state.estado===0){
+    if(this.props.estado===0){
       vartoggle=false
       styletoggle=''
     }
-    else if (this.state.estado===1){
+    else if (this.props.estado===1){
       vartoggle=true
       styletoggle=''
     }

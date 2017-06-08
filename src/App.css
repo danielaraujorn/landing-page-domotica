@@ -22,3 +22,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.controlando{
+  align-items: center;
+}
+@media screen and (ax-width: 767px) {
+  .controlando{
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .controlando{
+    display: flex;
+  }
+}

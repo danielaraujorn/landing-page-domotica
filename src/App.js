@@ -20,11 +20,10 @@ class App extends Component {
           </Typist>
         </div>
         <div style={{backgroundColor:"#eee"}} className="section" id="section1">
-          <h1 style={{color:"#006064",marginBottom:40,fontSize:"4em"}}>Controle tudo!</h1>
           <Exibicao />
         </div>
-        <div style={{backgroundColor:"#00f"}} className="section " id="section2">
-          <h1 style={{color:"#008"}}>B</h1>
+        <div style={{backgroundColor:"#006064"}} className="section " id="section2">
+          <h1 style={{color:"white"}}>Em breve...</h1>
         </div>
       </div>
     );
