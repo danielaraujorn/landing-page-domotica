@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 
 export default class LuzIcon extends Component{
   render() {
-  	console.log(this.props.primeiro)
     return (
     	<div>
     <svg viewBox="0 0 1094.89 1198.36">
