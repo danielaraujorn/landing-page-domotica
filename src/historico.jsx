@@ -67,19 +67,36 @@ export default class Historico extends Component {
           .fill(0)
           .map((item, i) => Math.random() * 50)
       ],
-      S: [
+      s: [
         { name: "Temperatura (Celsius)" },
         { name: "Consumo de água (Litros)" }
       ],
-      C: [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+      c: [
+        Array(moment().hours() + 1).fill(1),
+        Array(moment().hours() + 1).fill(1)
+      ]
     };
   }
-  // componentDidMount(){
-  //   this.setState({intervalo:setInterval(()=>{
-  //     let copiaX=this.state.x
-  //     let copiaC
-  //   },500)})
-  // }
+  componentDidMount() {
+    this.setState({
+      intervalo: setInterval(() => {
+        let copiaY = this.state.y;
+        let copiaC = this.state.c;
+        if (moment().hours() !== this.state.x.length - 1) {
+          copiaY[0].push(0);
+          copiaY[1].push(0);
+          copiaC[0].push(1);
+          copiaC[1].push(1);
+          this.setState({ x: [...this.state.x, this.state.x.length + "h"] });
+        }
+        copiaY[0][copiaY[0].length - 1] +=
+          Math.random() * 15 + Math.random() * 10;
+        copiaY[1][copiaY[1].length - 1] += Math.random();
+        copiaC[0][copiaC[1].length - 1]++;
+        this.setState({ y: copiaY, c: copiaC });
+      }, 1000)
+    });
+  }
   componentWillUnmount() {
     clearInterval(this.state.intervalo);
   }
@@ -97,8 +114,8 @@ export default class Historico extends Component {
               valores={{
                 x: this.state.x,
                 y: this.state.y,
-                S: this.state.S,
-                C: this.state.C
+                S: this.state.s,
+                C: this.state.c
               }}
             />
           </div>

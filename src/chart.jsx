@@ -6,6 +6,10 @@ export default class Paperchart extends Component {
     const data = { labels: [], datasets: [] };
     data.labels = this.props.valores.x;
     this.props.valores.y.forEach((item, i) => {
+      this.props.valores.y[i].map((element, j) => {
+        console.log(element, this.props.valores.C[i][j]);
+        Number((element / (this.props.valores.C[i][j] || 1)).toFixed(2));
+      });
       data.datasets.push({
         label: this.props.valores.S[i].name,
         fill: false,
