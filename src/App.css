@@ -41,7 +41,7 @@
   }
 }
 
-#section0 {
+.section0 {
   background-size: cover;
   background-image: url(./background.svg);
 }

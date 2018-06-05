@@ -4,6 +4,7 @@ import "./bootstrap.min.css";
 import logo from "./logo.svg";
 import Typist from "react-typist";
 import Exibicao from "./demonstracao";
+import Historico from "./historico";
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 class App extends Component {
@@ -12,8 +13,7 @@ class App extends Component {
       <div id="fullpage">
         <div
           style={{ backgroundColor: "#006064" }}
-          className="section "
-          id="section0"
+          className="section section0"
         >
           <img
             src={logo}
@@ -31,6 +31,40 @@ class App extends Component {
             </p>
           </Typist>
         </div>
+        <div style={{ backgroundColor: "#006064" }} className="section">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-offset-2 col-md-4">
+                <img
+                  src={logo}
+                  style={{ maxHeight: 25, width: "100%" }}
+                  alt="saiot"
+                />
+                <h2 style={{ fontSize: 20, color: "white" }}>algo aqui</h2>
+                <p style={{ fontSize: 12, color: "white" }}>
+                  asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                  aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                  asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas dpoijbn
+                  asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug asodhbsa asd
+                </p>
+              </div>
+              <div className="col-md-4">
+                <img
+                  src={logo}
+                  style={{ maxHeight: 25, width: "100%" }}
+                  alt="saiot"
+                />
+                <h2 style={{ fontSize: 20, color: "white" }}>algo aqui</h2>
+                <p style={{ fontSize: 12, color: "white" }}>
+                  asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                  aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                  asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas dpoijbn
+                  asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug asodhbsa asd
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div
           style={{ backgroundColor: "#eee" }}
           className="section"
@@ -40,10 +74,9 @@ class App extends Component {
         </div>
         <div
           style={{ backgroundColor: "#006064" }}
-          className="section "
-          id="section2"
+          className="section section0"
         >
-          <h1 style={{ color: "white" }}>Em breve...</h1>
+          <Historico />
         </div>
       </div>
     );
