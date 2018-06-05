@@ -92,7 +92,15 @@ export default class Historico extends Component {
             style={{ padding: 0 }}
             className="col-xs-12 col-md-offset-2 col-md-8"
           >
-            <Paperchart tema={this.props.tema} valores={this.state.valores} />
+            <Paperchart
+              tema={this.props.tema}
+              valores={{
+                x: this.state.x,
+                y: this.state.y,
+                S: this.state.S,
+                C: this.state.C
+              }}
+            />
           </div>
         </div>
       </div>
