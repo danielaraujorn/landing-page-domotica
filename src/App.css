@@ -19,20 +19,29 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.controlando{
+.controlando {
   align-items: center;
 }
 @media screen and (ax-width: 767px) {
-  .controlando{
+  .controlando {
     display: block;
   }
 }
 @media screen and (min-width: 768px) {
-  .controlando{
+  .controlando {
     display: flex;
   }
+}
+
+#section0 {
+  background-size: cover;
+  background-image: url(./background.svg);
 }
