@@ -45,3 +45,76 @@
   background-size: cover;
   background-image: url(./background.svg);
 }
+
+@keyframes logoanimation {
+  from {
+    left: calc(50vw - 113px);
+    top: calc(50vh - 33px);
+  }
+
+  to {
+    left: 10px;
+    top: 10px;
+  }
+}
+@keyframes logoanimationText {
+  from {
+    font-size: 60px;
+  }
+
+  to {
+    font-size: 36px;
+  }
+}
+@keyframes logoanimationImage {
+  from {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  to {
+    height: 24px;
+    margin-right: 6px;
+  }
+}
+.logoInicial {
+  z-index: 1;
+  animation: logoanimation 2s ease-in-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: calc(50vw - 113px);
+  top: calc(50vh - 33px);
+}
+.logoInicial h2 {
+  font-size: 60px;
+  color: white;
+  margin: 0;
+  animation: logoanimationText 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+.logoInicial img {
+  height: 40px;
+  margin-right: 10px;
+  animation: logoanimationImage 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
