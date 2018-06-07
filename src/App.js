@@ -15,71 +15,73 @@ class App extends Component {
           style={{ backgroundColor: "#006064" }}
           className="section section0"
         >
-          <div className="logoInicial">
-            <img src={logo} alt="saiot" />
-            <h2>Saiot</h2>
-          </div>
-          <div className="container">
-            <div
-              className="row"
-              style={{ display: "flex", alignItems: "center" }}
-            >
+          <div>
+            <div className="logoInicial">
+              <img src={logo} alt="saiot" />
+              <h2>Saiot</h2>
+            </div>
+            <div className="container">
               <div
-                style={{ textAlign: "right" }}
-                className="hidden-xs hidden-sm col-md-6"
+                className="row"
+                style={{ display: "flex", alignItems: "center" }}
               >
-                <img
-                  className="fadeIn"
-                  style={{ maxWidth: "45%" }}
-                  src={mobile}
-                  alt="saiot"
-                />
-              </div>
-              <div
-                style={{ textAlign: "left", paddingRight: 40 }}
-                className="col-md-4"
-              >
-                <h1
-                  className="fadeIn"
-                  style={{ color: "#FFFB", fontSize: "4em", margin: 0 }}
+                <div
+                  style={{ textAlign: "right" }}
+                  className="hidden-xs hidden-sm col-md-6"
                 >
-                  O <strong style={{ color: "#fff" }}>controle</strong> na palma
-                  da sua mão
-                </h1>
-                <p
-                  className="fadeIn"
-                  style={{
-                    margin: 0,
-                    marginBottom: 15,
-                    color: "#02a2b1",
-                    fontSize: "1.5em"
-                  }}
+                  <img
+                    className="fadeIn"
+                    style={{ maxWidth: "45%" }}
+                    src={mobile}
+                    alt="saiot"
+                  />
+                </div>
+                <div
+                  style={{ textAlign: "left", paddingRight: 40 }}
+                  className="col-md-4"
                 >
-                  automação inteligente com análise e tomadas de decisão
-                </p>
-                <a
-                  href="#descrição"
-                  style={{
-                    backgroundColor: "#ff4b22",
-                    color: "#FFF",
-                    fontSize: "1.5em",
-                    marginRight: 10
-                  }}
-                  className="btn fadeIn"
-                >
-                  Ler mais
-                </a>
-                <a
-                  href="http://saiot.ect.ufrn.br"
-                  style={{
-                    backgroundColor: "#ff4b22",
-                    color: "#FFF",
-                    fontSize: "1.5em"
-                  }}
-                  className="btn fadeIn"
-                >
-                  Ir pro sistema
-                </a>
+                  <h1
+                    className="fadeIn"
+                    style={{ color: "#FFFB", fontSize: "4em", margin: 0 }}
+                  >
+                    O <strong style={{ color: "#fff" }}>controle</strong> na
+                    palma da sua mão
+                  </h1>
+                  <p
+                    className="fadeIn"
+                    style={{
+                      margin: 0,
+                      marginBottom: 15,
+                      color: "#02a2b1",
+                      fontSize: "1.5em"
+                    }}
+                  >
+                    automação inteligente com análise e tomadas de decisão
+                  </p>
+                  <a
+                    href="#descrição"
+                    style={{
+                      backgroundColor: "#ff4b22",
+                      color: "#FFF",
+                      fontSize: "1.5em",
+                      marginRight: 10
+                    }}
+                    className="btn fadeIn"
+                  >
+                    Ler mais
+                  </a>
+                  <a
+                    href="http://saiot.ect.ufrn.br"
+                    style={{
+                      backgroundColor: "#ff4b22",
+                      color: "#FFF",
+                      fontSize: "1.5em"
+                    }}
+                    className="btn fadeIn"
+                  >
+                    Ir pro sistema
+                  </a>
+                </div>
               </div>
             </div>
           </div>
