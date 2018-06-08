@@ -5,7 +5,7 @@ import logo from "./logo.svg";
 import Exibicao from "./demonstracao";
 import Historico from "./historico";
 import injectTapEventPlugin from "react-tap-event-plugin";
-import mobile from "./mobile.png";
+import mobile from "./handMobile.png";
 injectTapEventPlugin();
 class App extends Component {
   render() {
@@ -15,6 +15,16 @@ class App extends Component {
           style={{ backgroundColor: "#006064" }}
           className="section section0"
         >
+          <img
+            className="hidden-xs hidden-sm rotateMobile"
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "50%"
+            }}
+            src={mobile}
+            alt="saiot"
+          />
           <div>
             <div className="logoInicial">
               <img src={logo} alt="saiot" />
@@ -25,7 +35,7 @@ class App extends Component {
                 className="row"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <div
+                {/* <div
                   style={{ textAlign: "right" }}
                   className="hidden-xs hidden-sm col-md-6"
                 >
@@ -35,10 +45,10 @@ class App extends Component {
                     src={mobile}
                     alt="saiot"
                   />
-                </div>
+                </div> */}
                 <div
                   style={{ textAlign: "left", paddingRight: 40 }}
-                  className="col-md-4"
+                  className="col-md-offset-6 col-md-4"
                 >
                   <h1
                     className="fadeIn"
