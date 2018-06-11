@@ -1,3 +1,6 @@
+body {
+  font-family: "Roboto", sans-serif !important;
+}
 .App {
   text-align: center;
 }
@@ -143,4 +146,41 @@
   transform: rotate(20deg);
   margin: 0;
   opacity: 0;
+}
+.paperDescription {
+  background-color: white;
+  border-radius: 2px;
+  padding: 10px;
+  box-shadow: rgba(66, 66, 66, 0.12) 0px 1px 6px,
+    rgba(66, 66, 66, 0.12) 0px 1px 4px;
+}
+.paperDescription h2 {
+  font-weight: 600;
+  /* text-shadow: 1px 1px #006064; */
+  margin: 10px 0;
+  font-size: 20px;
+  color: #006064;
+}
+.paperDescription p {
+  font-size: 12px;
+  color: #006064;
+}
+.paperDescription img {
+  max-height: 35px;
+  max-width: 35px;
+  margin: auto;
+  width: 100%;
+}
+.paperDescription .imageDiv {
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: rgba(66, 66, 66, 0.2) 0px 1px 6px,
+    rgba(66, 66, 66, 0.2) 0px 1px 4px;
+  height: 60px;
+  width: 60px;
 }

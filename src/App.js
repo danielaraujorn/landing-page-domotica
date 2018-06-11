@@ -6,6 +6,8 @@ import Exibicao from "./demonstracao";
 import Historico from "./historico";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import mobile from "./handMobile.png";
+import lineChart from "./line-chart.svg";
+import connection from "./connection.svg";
 injectTapEventPlugin();
 class App extends Component {
   render() {
@@ -99,68 +101,55 @@ class App extends Component {
         <div className="section">
           <div className="container">
             <div className="row" style={{ paddingTop: 25, paddingBottom: 25 }}>
-              <div
-                className="col-md-4"
-                style={{ paddingTop: 15, paddingBottom: 15 }}
-              >
-                <img
-                  src={logo}
-                  style={{ maxHeight: 25, width: "100%" }}
-                  alt="saiot"
-                />
-                <div style={{ padding: "0 20px" }}>
-                  <h2 style={{ fontSize: 20, color: "white" }}>
-                    Análise de dados
-                  </h2>
-                  <p style={{ fontSize: 12, color: "white" }}>
-                    asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                    aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                    asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas dpoijbn
-                    asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug asodhbsa
-                    asd
-                  </p>
+              <div className="col-md-4" style={{ padding: 10 }}>
+                <div className="paperDescription">
+                  <div className="imageDiv">
+                    <img src={lineChart} alt="saiot" />
+                  </div>
+                  <div style={{ padding: "0 20px" }}>
+                    <h2>Análise de dados</h2>
+                    <p>
+                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                      asodhbsa asd
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div
-                className="col-md-4"
-                style={{ paddingTop: 15, paddingBottom: 15 }}
-              >
-                <img
-                  src={logo}
-                  style={{ maxHeight: 25, width: "100%" }}
-                  alt="saiot"
-                />
-                <div style={{ padding: "0 20px" }}>
-                  <h2 style={{ fontSize: 20, color: "white" }}>Comunidade</h2>
-                  <p style={{ fontSize: 12, color: "white" }}>
-                    asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                    aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                    asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas dpoijbn
-                    asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug asodhbsa
-                    asd
-                  </p>
+              <div className="col-md-4" style={{ padding: 10 }}>
+                <div className="paperDescription">
+                  <div className="imageDiv">
+                    <img src={connection} alt="saiot" />
+                  </div>
+                  <div style={{ padding: "0 20px" }}>
+                    <h2>Comunidade</h2>
+                    <p>
+                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                      asodhbsa asd
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div
-                className="col-md-4"
-                style={{ paddingTop: 15, paddingBottom: 15 }}
-              >
-                <img
-                  src={logo}
-                  style={{ maxHeight: 25, width: "100%" }}
-                  alt="saiot"
-                />
-                <div style={{ padding: "0 20px" }}>
-                  <h2 style={{ fontSize: 20, color: "white" }}>
-                    Funcionamento local
-                  </h2>
-                  <p style={{ fontSize: 12, color: "white" }}>
-                    asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                    aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                    asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas dpoijbn
-                    asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug asodhbsa
-                    asd
-                  </p>
+              <div className="col-md-4" style={{ padding: 10 }}>
+                <div className="paperDescription">
+                  <div className="imageDiv">
+                    <img src={connection} alt="saiot" />
+                  </div>
+                  <div style={{ padding: "0 20px" }}>
+                    <h2>Alguma coisa</h2>
+                    <p>
+                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                      asodhbsa asd
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
