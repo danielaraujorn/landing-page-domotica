@@ -8,6 +8,7 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 import mobile from "./handMobile.png";
 import lineChart from "./line-chart.svg";
 import connection from "./connection.svg";
+import paper from "./paper.svg";
 injectTapEventPlugin();
 class App extends Component {
   render() {
@@ -98,10 +99,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="section">
-          <div className="container">
-            <div className="row" style={{ paddingTop: 25, paddingBottom: 25 }}>
-              <div className="col-md-4" style={{ padding: 10 }}>
+        <div className="section section1">
+          {/* <div className="slide"> */}
+            {/* <div className="row" style={{ paddingTop: 25, paddingBottom: 25 }}> */}
+            <div className="container">
+              <div className="col-md-6 slide" style={{ padding: 10 }}>
                 <div className="paperDescription">
                   <div className="imageDiv">
                     <img src={lineChart} alt="saiot" />
@@ -118,7 +120,9 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4" style={{ padding: 10 }}>
+            </div>
+            <div className="container">  
+              <div className="col-md-6 slide" style={{ padding: 10 }}>
                 <div className="paperDescription">
                   <div className="imageDiv">
                     <img src={connection} alt="saiot" />
@@ -135,13 +139,15 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4" style={{ padding: 10 }}>
+            </div>
+            <div className="container">  
+              <div className="col-md-6 slide" style={{ padding: 10 }}>
                 <div className="paperDescription">
                   <div className="imageDiv">
-                    <img src={connection} alt="saiot" />
+                    <img src={paper} alt="saiot" />
                   </div>
                   <div style={{ padding: "0 20px" }}>
-                    <h2>Alguma coisa</h2>
+                    <h2>Publicações</h2>
                     <p>
                       asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
                       aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
@@ -153,7 +159,8 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div>
+            {/* </div> */}
+          {/* </div> */}
         </div>
         <div
           style={{ backgroundColor: "#eee" }}

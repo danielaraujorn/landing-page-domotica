@@ -30,6 +30,16 @@ body {
   }
 }
 
+/* .fp-controlArrow.fp-prev {
+  z-index: 5;
+  
+}
+.fp-controlArrow.fp-next {
+  z-index: 5;
+  background-image: url(line-chart.svg) !important;
+} */
+
+
 .controlando {
   align-items: center;
 }
@@ -47,6 +57,12 @@ body {
 .section0 {
   background-size: cover;
   background-image: url(./background.svg);
+}
+
+.section1 {
+  z-index: 1;
+  background-size: cover;
+  background-image: url(./section1.svg);
 }
 
 @keyframes logoanimation {
