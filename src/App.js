@@ -99,11 +99,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="section section1 slides">
+        <div className="section">
           {/* <div className="slide"> */}
             {/* <div className="row" style={{ paddingTop: 25, paddingBottom: 25 }}> */}
-            <div className="container">
-              <div className="col-md-6 slide" style={{ padding: 10 }}>
+            <div className="container-fluid">
+              <div className="col-md-8" style={{ padding: 10 }}>
                 <div className="paperDescription">
                   <div className="imageDiv">
                     <img src={lineChart} alt="saiot" />
@@ -120,41 +120,40 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="container">  
-              <div className="col-md-6 slide" style={{ padding: 10 }}>
-                <div className="paperDescription">
-                  <div className="imageDiv">
-                    <img src={connection} alt="saiot" />
-                  </div>
-                  <div style={{ padding: "0 20px" }}>
-                    <h2>Comunidade</h2>
-                    <p>
-                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
-                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
-                      asodhbsa asd
-                    </p>
+              <div className="col-md-4" style={{ padding: 10 }}>
+                <div>
+                  <div className="paperDescription">
+                    <div className="imageDiv">
+                      <img src={connection} alt="saiot" />
+                    </div>
+                    <div style={{ padding: "0 20px" }}>
+                      <h2>Comunidade</h2>
+                      <p>
+                        asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                        aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                        asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                        dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                        asodhbsa asd
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="container">  
-              <div className="col-md-6 slide" style={{ padding: 10 }}>
-                <div className="paperDescription">
-                  <div className="imageDiv">
-                    <img src={paper} alt="saiot" />
-                  </div>
-                  <div style={{ padding: "0 20px" }}>
-                    <h2>Publicações</h2>
-                    <p>
-                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
-                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
-                      asodhbsa asd
-                    </p>
+              
+                <div>
+                  <div className="paperDescription">
+                    <div className="imageDiv">
+                      <img src={paper} alt="saiot" />
+                    </div>
+                    <div style={{ padding: "0 20px" }}>
+                      <h2>Publicações</h2>
+                      <p>
+                        asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                        aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                        asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                        dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                        asodhbsa asd
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
