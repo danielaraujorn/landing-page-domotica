@@ -99,7 +99,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="section section1">
+        <div className="section section1 slides">
           {/* <div className="slide"> */}
             {/* <div className="row" style={{ paddingTop: 25, paddingBottom: 25 }}> */}
             <div className="container">

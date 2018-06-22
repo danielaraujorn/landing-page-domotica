@@ -30,6 +30,28 @@ body {
   }
 }
 
+.fp-controlArrow.fp-prev {
+  top:50% !important;
+  left: 25px !important;
+  background-image: url(./svg/002-left-arrow.svg) !important;
+  margin-top: -13px !important;
+  width: 26px !important;
+  height: 26px !important;
+  z-index: 5 !important;
+  background-size: cover !important;
+  border-width: 0 !important; 
+}
+.fp-controlArrow.fp-next {
+  top:50%  !important;
+  right: 25px !important;
+  background-image: url(./svg/001-right-arrow.svg) !important;
+  margin-top: -13px !important;
+  width: 26px !important;
+  height: 26px !important;
+  z-index: 5 !important;
+  background-size: cover !important;
+  border-width: 0 !important; 
+}
 /* .fp-controlArrow.fp-prev {
   z-index: 5;
   
