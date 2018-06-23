@@ -87,6 +87,19 @@ body {
   background-image: url(./section1.svg);
 }
 
+.subSection{
+  border-right:solid 10px white; 
+  background-position-x: -3px;
+  background-position-y: -3px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 100%;
+  width:100%;
+  
+  background-image: url(./imagensUF/12.png);
+}
+
 @keyframes logoanimation {
   from {
     left: 50vw;

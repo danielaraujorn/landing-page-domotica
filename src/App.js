@@ -100,23 +100,34 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-          {/* <div className="slide"> */}
-            {/* <div className="row" style={{ paddingTop: 25, paddingBottom: 25 }}> */}
-            <div className="container-fluid">
-              <div className="col-md-8" style={{ padding: 10 }}>
-                <div className="paperDescription">
-                  <div className="imageDiv">
-                    <img src={lineChart} alt="saiot" />
-                  </div>
-                  <div style={{ padding: "0 20px" }}>
-                    <h2>Análise de dados</h2>
-                    <p>
-                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
-                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
-                      asodhbsa asd
-                    </p>
+            <div
+                 style={{ height: '100%',
+                          width: '100%',
+                        }}
+            >
+              <div  className="col-md-8 subSection"
+              >
+                <div className="container"
+                      style={{
+                        position: 'absolute',
+                        top: '50%',
+                        border: 0
+                   }}
+                >           
+                  <div className="paperDescription">
+                    <div className="imageDiv">
+                      <img src={lineChart} alt="saiot" />
+                    </div>
+                    <div style={{ padding: "0 20px" }}>
+                      <h2>Análise de dados</h2>
+                      <p>
+                        asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                        aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                        asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                        dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                        asodhbsa asd
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
