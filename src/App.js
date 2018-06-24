@@ -100,58 +100,76 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-            <div
-                 style={{ height: '100%',
-                          width: '100%',
-                        }}
-            >
-              <div  className="col-md-8 subSection"
-              >
-                <div className="container"
+          <div
+                style={{ height: '100%',
+                        width: '100%',
+                      }}
+          >
+            <div  className="col-md-8 subSection1">
+              <div  style={{
+                    position: 'absolute',
+                    top: '50%',
+                  }}
+              >           
+                <div  className="paperDescription"
                       style={{
-                        position: 'absolute',
-                        top: '50%',
-                        border: 0
-                   }}
-                >           
-                  <div className="paperDescription">
-                    <div className="imageDiv">
-                      <img src={lineChart} alt="saiot" />
-                    </div>
-                    <div style={{ padding: "0 20px" }}>
-                      <h2>Análise de dados</h2>
-                      <p>
-                        asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                        aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                        asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
-                        dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
-                        asodhbsa asd
-                      </p>
-                    </div>
+                        marginRight: '15px',
+                      }}      
+                >
+                  <div className="imageDiv">
+                    <img src={lineChart} alt="saiot" />
+                  </div>
+                  <div style={{ padding: "0 20px" }}>
+                    <h2>Análise de dados</h2>
+                    <p>
+                      asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                      aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                      asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                      dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                      asodhbsa asd
+                    </p>
                   </div>
                 </div>
               </div>
-              <div className="col-md-4" style={{ padding: 10 }}>
-                <div>
-                  <div className="paperDescription">
-                    <div className="imageDiv">
-                      <img src={connection} alt="saiot" />
+            </div>
+            <div className="col-md-4 subSection2">
+              <div  className="col"
+                    style={{
+                      height:'100%',
+                      width:'100%',
+                    }}
+              >
+                <div  className="container-fluid subSubSection1">
+                  
+                    <div  className="paperDescription"
+                          style={{
+                            position: 'relative',
+                            top: '25%', 
+                          }}      
+                    >
+                      <div className="imageDiv">
+                        <img src={connection} alt="saiot" />
+                      </div>
+                      <div style={{ padding: "0 20px" }}>
+                        <h2>Comunidade</h2>
+                        <p>
+                          asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                          aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                          asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                          dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                          asodhbsa asd
+                        </p>
+                      </div>
                     </div>
-                    <div style={{ padding: "0 20px" }}>
-                      <h2>Comunidade</h2>
-                      <p>
-                        asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                        aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                        asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
-                        dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
-                        asodhbsa asd
-                      </p>
-                    </div>
-                  </div>
+
                 </div>
-              
-                <div>
-                  <div className="paperDescription">
+                <div className="container-fluid subSubSection2">
+                  <div  className="paperDescription"
+                        style={{
+                          position: 'relative',
+                          top: '25%', 
+                        }}      
+                  >
                     <div className="imageDiv">
                       <img src={paper} alt="saiot" />
                     </div>
@@ -169,6 +187,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
+          </div>
             {/* </div> */}
           {/* </div> */}
         </div>

@@ -87,17 +87,44 @@ body {
   background-image: url(./section1.svg);
 }
 
-.subSection{
+.subSection1{
   border-right:solid 10px white; 
-  background-position-x: -3px;
-  background-position-y: -3px;
+  background-position-x: -2px;
+  background-position-y: -1px;
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
-  height: 100%;
-  width:100%;
-  
+  height: inherit;
+  width: inherit;
   background-image: url(./imagensUF/12.png);
+}
+.subSection2{
+  height: inherit;
+}
+.subSubSection1{
+  border-bottom:solid 5px white; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 50%;
+  /* width: 100%; */
+  /*top: 25%;*/
+  background-image: url(./imagensUF/13.png);
+}
+.subSubSection2{
+  border-top:solid 5px white; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 50%;
+  top:  50%;
+  /* width: 100%; */
+    
+  background-image: url(./imagensUF/14.png);
+}
+.col-md-4{
+  padding-left: 0px !important;
+  
 }
 
 @keyframes logoanimation {
