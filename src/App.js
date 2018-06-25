@@ -10,6 +10,7 @@ import lineChart from "./line-chart.svg";
 import connection from "./connection.svg";
 import paper from "./paper.svg";
 import zIndex from "material-ui/styles/zIndex";
+
 injectTapEventPlugin();
 class App extends Component {
   render() {
@@ -101,12 +102,12 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-          <div
+          <div  
                 style={{ height: '100%',
                         width: '100%',
                       }}
           >
-            <div  className="col-md-8 subSection1">
+            <div  className="col-lg-8 col-md-12 col-sm-12 col-xs-12 subSection1">
               <div  style={{
                     position: 'absolute',
                     top: '15px',
@@ -133,14 +134,14 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 subSection2">
+            <div className="col-lg-4 subSection2">
               <div  className="col"
                     style={{
                       height:'100%',
                       width:'100%',
                     }}
               >
-                <div  className="container-fluid subSubSection1"
+                <div  className="container-fluid col-md-12 col-sm-12 col-xs-12 subSubSection1"
                       style={{
                         marginRight: '-15px',
                       }}
@@ -168,7 +169,7 @@ class App extends Component {
                     </div>
 
                 </div>
-                <div className="container-fluid subSubSection2"
+                <div className="container-fluid col-md-12 col-sm-12 col-xs-12 subSubSection2"
                       style={{
                         marginRight: '-15px',
                       }}
