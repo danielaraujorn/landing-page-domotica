@@ -102,26 +102,34 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-          <div  
-                style={{ height: '100%',
-                        width: '100%',
-                      }}
+          <div
+            style={{
+              height: "100%",
+              width: "100%"
+            }}
           >
-            <div  className="col-lg-8 col-md-12 col-sm-12 col-xs-12 subSection1">
-              <div  style={{
-                    position: 'absolute',
-                    top: '15px',
+            <div className="col-lg-8 col-xs-12 subSection1">
+              <div
+                style={{
+                  position: "absolute",
+                  top: "20%"
+                }}
+              >
+                <div
+                  className="paperDescription"
+                  style={{
+                    marginLeft: "15px"
                   }}
-              >           
-                <div  className="paperDescription"
-                      style={{
-                        marginRight: '15px',
-                      }}      
                 >
                   <div className="imageDiv">
                     <img src={lineChart} alt="saiot" />
                   </div>
-                  <div style={{ padding: "0 20px" }}>
+                  <div
+                    className="truncate"
+                    style={{
+                      padding: "0 20px"
+                    }}
+                  >
                     <h2>Análise de dados</h2>
                     <p>
                       asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
@@ -134,56 +142,58 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 subSection2">
-              <div  className="col"
-                    style={{
-                      height:'100%',
-                      width:'100%',
-                    }}
+            <div className="col-lg-4 col-xs-12 subSection2">
+              <div
+                style={{
+                  height: "100%",
+                  width: "100%"
+                }}
               >
-                <div  className="container-fluid col-md-12 col-sm-12 col-xs-12 subSubSection1"
-                      style={{
-                        marginRight: '-15px',
-                      }}
+                <div
+                  className="container-fluid subSubSection1"
+                  style={{
+                    marginRight: "-15px"
+                  }}
                 >
-                  
-                    <div  className="paperDescription"
-                          style={{
-                            position: 'relative',
-                            top: '15px',
-                          }}      
-                    >
-                      <div className="imageDiv">
-                        <img src={connection} alt="saiot" />
-                      </div>
-                      <div style={{ padding: "0 20px" }}>
-                        <h2>Comunidade</h2>
-                        <p>
-                          asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
-                          aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
-                          asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
-                          dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
-                          asodhbsa asd
-                        </p>
-                      </div>
+                  <div
+                    className="paperDescription"
+                    style={{
+                      position: "relative",
+                      top: "15px"
+                    }}
+                  >
+                    <div className="imageDiv">
+                      <img src={connection} alt="saiot" />
                     </div>
-
+                    <div className="truncate" style={{ padding: "0 20px" }}>
+                      <h2>Comunidade</h2>
+                      <p>
+                        asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
+                        aoshdug asodhbsa asd asodnas dpoijbn asdóubnasd asdasd
+                        asdasdasdki asdohuasgd aoshdug asodhbsa asd asodnas
+                        dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd aoshdug
+                        asodhbsa asd
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="container-fluid col-md-12 col-sm-12 col-xs-12 subSubSection2"
-                      style={{
-                        marginRight: '-15px',
-                      }}
+                <div
+                  className="container-fluid subSubSection2"
+                  style={{
+                    marginRight: "-15px"
+                  }}
                 >
-                  <div  className="paperDescription"
-                        style={{
-                          position: 'relative',
-                          top: '15px', 
-                        }} 
+                  <div
+                    className="paperDescription"
+                    style={{
+                      position: "relative",
+                      top: "15px"
+                    }}
                   >
                     <div className="imageDiv">
                       <img src={paper} alt="saiot" />
                     </div>
-                    <div style={{ padding: "0 20px" }}>
+                    <div className="truncate" style={{ padding: "0 20px" }}>
                       <h2>Publicações</h2>
                       <p>
                         asodnas dpoijbn asdóubnasd asdasd asdasdasdki asdohuasgd
@@ -198,7 +208,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-            {/* </div> */}
+          {/* </div> */}
           {/* </div> */}
         </div>
         <div

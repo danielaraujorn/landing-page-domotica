@@ -31,7 +31,7 @@ body {
 }
 
 .fp-controlArrow.fp-prev {
-  top:50% !important;
+  top: 50% !important;
   left: 25px !important;
   background-image: url(./svg/002-left-arrow.svg) !important;
   margin-top: -13px !important;
@@ -39,10 +39,10 @@ body {
   height: 26px !important;
   z-index: 5 !important;
   background-size: cover !important;
-  border-width: 0 !important; 
+  border-width: 0 !important;
 }
 .fp-controlArrow.fp-next {
-  top:50%  !important;
+  top: 50% !important;
   right: 25px !important;
   background-image: url(./svg/001-right-arrow.svg) !important;
   margin-top: -13px !important;
@@ -50,7 +50,7 @@ body {
   height: 26px !important;
   z-index: 5 !important;
   background-size: cover !important;
-  border-width: 0 !important; 
+  border-width: 0 !important;
 }
 /* .fp-controlArrow.fp-prev {
   z-index: 5;
@@ -60,7 +60,6 @@ body {
   z-index: 5;
   background-image: url(line-chart.svg) !important;
 } */
-
 
 .controlando {
   align-items: center;
@@ -82,48 +81,55 @@ body {
 }
 
 /*xs*/
-@media screen and (max-width: 575.98px) { 
-  .subSection1{
-    position: absolute;
-    height: 100%;
-    width:100%;
+@media screen and (max-width: 575.98px) {
+  .subSection1 {
+    position: absolute !important;
+    height: 100% !important;
     background-image: url(./imagensUF/03.jpg);
+    background-size: 100%;
   }
-  .subSection2{
-    /*margin-top:50%;*/
-    height: inherit;
+  .subSection2 {
+    position: absolute !important;
+    top: 100%;
+    height: 100%;
   }
-  .subSubSection1{
-    position:absolute;
-    height: 50%;
+
+  .subSubSection1 {
+    height: 50% !important;
+
     background-image: url(./imagensUF/16.jpg);
+    background-size: 100%;
   }
-  .subSubSection2{
-    position: absolute;
-    height: 50%;
+  .subSubSection2 {
+    height: 50% !important;
     background-image: url(./imagensUF/04.jpg);
+    background-size: 100%;
   }
-  /* .col-md-4{
-    padding-left: 0px !important;
-    
-  } */
+  .paperDescription {
+    max-height: 140px !important;
+  }
+  .col-xs-12 {
+    padding: 0px !important;
+  }
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /*sm*/
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
-  .subSection1{
-   
+  .subSection1 {
     background-image: url(./imagensUF/03.jpg);
   }
-  .subSection2{
+  .subSection2 {
     height: 100%;
   }
-  .subSubSection1{
-    
+  .subSubSection1 {
     background-image: url(./imagensUF/16.jpg);
   }
-  .subSubSection2{
-   
+  .subSubSection2 {
     background-image: url(./imagensUF/04.jpg);
   }
   /* .col-md-4{
@@ -133,9 +139,9 @@ body {
 }
 
 /*md*/
-@media screen and (min-width: 768px) and (max-width: 991.98px) {  
-  .subSection1{
-    border-right:solid 1px #cdeded;
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .subSection1 {
+    border-right: solid 1px #cdeded;
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -143,12 +149,12 @@ body {
     width: 100%;
     background-image: url(./imagensUF/03.jpg);
   }
-  .subSection2{
+  .subSection2 {
     height: inherit;
   }
-  .subSubSection1{
-    border-bottom:solid 1px #cdeded; 
-    border-left:solid 2px #cdeded; 
+  .subSubSection1 {
+    border-bottom: solid 1px #cdeded;
+    border-left: solid 2px #cdeded;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -157,9 +163,9 @@ body {
     /*top: 25%;*/
     background-image: url(./imagensUF/16.jpg);
   }
-  .subSubSection2{
-    border-top:solid 1px #cdeded;
-    border-left:solid 2px #cdeded;
+  .subSubSection2 {
+    border-top: solid 1px #cdeded;
+    border-left: solid 2px #cdeded;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -167,18 +173,17 @@ body {
 
     /*top:  50%;*/
     /* width: 100%; */
-      
+
     background-image: url(./imagensUF/04.jpg);
   }
-  .col-md-4{
+  .col-md-4 {
     padding-left: 0px !important;
-    
   }
 }
 /*others*/
-@media screen and (min-width: 992px){
-  .subSection1{
-    border-right:solid 1px #cdeded;
+@media screen and (min-width: 992px) {
+  .subSection1 {
+    border-right: solid 1px #cdeded;
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -186,12 +191,12 @@ body {
     width: 100%;
     background-image: url(./imagensUF/03.jpg);
   }
-  .subSection2{
+  .subSection2 {
     height: inherit;
   }
-  .subSubSection1{
-    border-bottom:solid 1px #cdeded; 
-    border-left:solid 2px #cdeded; 
+  .subSubSection1 {
+    border-bottom: solid 1px #cdeded;
+    border-left: solid 2px #cdeded;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -200,9 +205,9 @@ body {
     /*top: 25%;*/
     background-image: url(./imagensUF/16.jpg);
   }
-  .subSubSection2{
-    border-top:solid 1px #cdeded;
-    border-left:solid 2px #cdeded;
+  .subSubSection2 {
+    border-top: solid 1px #cdeded;
+    border-left: solid 2px #cdeded;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -210,12 +215,11 @@ body {
 
     /*top:  50%;*/
     /* width: 100%; */
-      
+
     background-image: url(./imagensUF/04.jpg);
   }
-  .col-md-4{
-    padding-left: 0px !important;
-    
+  .col-lg-4 {
+    padding: 0px !important;
   }
 }
 @keyframes logoanimation {
