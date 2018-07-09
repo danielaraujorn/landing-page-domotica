@@ -102,23 +102,14 @@ class App extends Component {
           </div>
         </div>
         <div className="section">
-          <div
-            style={{
-              height: "100%",
-              width: "100%"
-            }}
-          >
-            <div className="col-lg-8 col-xs-12 subSection1">
-              <div
-                style={{
-                  position: "absolute",
-                  top: "20%"
-                }}
-              >
+          <div>
+            <div style={{ padding: 0 }} className="col-lg-8 col-xs-12 ">
+              <div className="backgroundImage1">
                 <div
-                  className="paperDescription"
+                  className="paperDescription subSection01"
                   style={{
-                    marginLeft: "15px"
+                    position: "relative",
+                    top: "15px"
                   }}
                 >
                   <div className="imageDiv">
@@ -142,21 +133,11 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-xs-12 subSection2">
-              <div
-                style={{
-                  height: "100%",
-                  width: "100%"
-                }}
-              >
-                <div
-                  className="container-fluid subSubSection1"
-                  style={{
-                    marginRight: "-15px"
-                  }}
-                >
+            <div style={{ padding: 0 }} className="col-lg-4 col-xs-12">
+              <div>
+                <div className="backgroundImage2">
                   <div
-                    className="paperDescription"
+                    className="paperDescription subSection02"
                     style={{
                       position: "relative",
                       top: "15px"
@@ -177,14 +158,9 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
-                <div
-                  className="container-fluid subSubSection2"
-                  style={{
-                    marginRight: "-15px"
-                  }}
-                >
+                <div className="backgroundImage3">
                   <div
-                    className="paperDescription"
+                    className="paperDescription subSection03"
                     style={{
                       position: "relative",
                       top: "15px"
