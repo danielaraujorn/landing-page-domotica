@@ -9,6 +9,7 @@ import mobile from "./handMobile.png";
 import lineChart from "./line-chart.svg";
 import connection from "./connection.svg";
 import paper from "./paper.svg";
+import cidade from "./svg/newcity.svg";
 import zIndex from "material-ui/styles/zIndex";
 
 injectTapEventPlugin();
@@ -188,10 +189,11 @@ class App extends Component {
           {/* </div> */}
         </div>
         <div
-          style={{ backgroundColor: "#eee" }}
+          style={{ backgroundPositionX: 50 }}
           className="section"
           id="section1"
         >
+          {/* <img src={cidade} /> */}
           <Exibicao />
         </div>
         <div
