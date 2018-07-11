@@ -183,6 +183,11 @@ body {
     padding-left: 15px;
   }
 }
+#section1 {
+  background-image: url("./svg/cidade_saiot.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 @keyframes logoanimation {
   from {
     left: 50vw;
