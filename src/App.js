@@ -9,7 +9,6 @@ import mobile from "./handMobile.png";
 import lineChart from "./line-chart.svg";
 import connection from "./connection.svg";
 import paper from "./paper.svg";
-
 injectTapEventPlugin();
 class App extends Component {
   render() {
@@ -186,12 +185,7 @@ class App extends Component {
           {/* </div> */}
           {/* </div> */}
         </div>
-        <div
-          style={{ backgroundPositionX: 50 }}
-          className="section"
-          id="section1"
-        >
-          {/* <img src={cidade} /> */}
+        <div id="section1" className="section">
           <Exibicao />
         </div>
         <div

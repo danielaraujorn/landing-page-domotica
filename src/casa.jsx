@@ -6,7 +6,6 @@ export default class Casa extends Component {
       let array = document.getElementsByClassName(
         nextProps.janela ? "closeWindows" : "openWindows"
       );
-      console.log(array);
       for (let i = 0; i < array.length; i++) {
         array[i].beginElement();
       }

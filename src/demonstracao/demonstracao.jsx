@@ -16,6 +16,7 @@ import {
 } from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import ReactTooltip from "react-tooltip";
+// import cidade from "../svg/newcity.svg";
 import Casa from "../casa";
 export const lightTheme = getMuiTheme({
   appBar: {
@@ -147,8 +148,28 @@ export default class exibicao extends Component {
           codNode: "15755e63daff4475845730ffe6c2de34",
           state: "3"
         }
-      ]
+      ],
+      backgroundAjustes: { size: 1000, x: 0, y: 0 }
     };
+  }
+  componentWillUpdate() {
+    console.log(
+      "ALO",
+      document.getElementById("Layer_1").getBoundingClientRect()
+    );
+  }
+  ajustarBackground = bounds => {
+    this.setState({
+      backgroundAjustes: {
+        size: bounds.width * 5.4,
+        x: bounds.width * 0.59,
+        y: bounds.width * 0.54
+      }
+    });
+  };
+  componentDidMount() {
+    let casinha = document.getElementById("Layer_1");
+    casinha && this.ajustarBackground(casinha.getBoundingClientRect());
   }
   onChange = (codDevice, key, value) => {
     let i = this.state.dispositivos.findIndex(
@@ -164,30 +185,48 @@ export default class exibicao extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={lightTheme}>
-        <div className="container">
-          <div className="row controlando">
-            <div className="col-xs-8 col-xs-offset-2 col-sm-4">
-              <Casa
-                sala={this.state.dispositivos[0].controllers}
-                janela={this.state.dispositivos[1].controllers[0].value}
-                quarto1={this.state.dispositivos[2].controllers}
-                quarto2={this.state.dispositivos[3].controllers}
-              />
-              <ReactTooltip />
-            </div>
-            <div
-              style={{ padding: 0 }}
-              className="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1"
-            >
-              {this.state.dispositivos.map(dispositivo => (
-                <DispositivoUnico
-                  putDispositivoControle={this.onChange}
-                  controlPermission={true}
-                  key={dispositivo.codDevice}
-                  dispositivo={dispositivo}
-                  value={dispositivo.value}
+        <div
+          id="backgroundDemonstracao"
+          style={{
+            minHeight: "100%",
+            width: "100%",
+            backgroundSize: this.state.backgroundAjustes.size,
+            backgroundPositionX:
+              "calc(50% - " + this.state.backgroundAjustes.x + "px)",
+            backgroundPositionY:
+              "calc(50% + " + this.state.backgroundAjustes.y + "px)"
+          }}
+        >
+          <div className="container">
+            {/* <object id="cidadeBackground" data={cidade} type="image/svg+xml" /> */}
+            <div className="row controlando">
+              <div className="col-xs-8 col-xs-offset-2 col-sm-4">
+                <Casa
+                  sala={this.state.dispositivos[0].controllers}
+                  janela={this.state.dispositivos[1].controllers[0].value}
+                  quarto1={this.state.dispositivos[2].controllers}
+                  quarto2={this.state.dispositivos[3].controllers}
                 />
-              ))}
+                <ReactTooltip />
+              </div>
+              <div
+                style={{
+                  padding: 10,
+                  backgroundColor: "#eee",
+                  borderRadius: 2
+                }}
+                className="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1"
+              >
+                {this.state.dispositivos.map(dispositivo => (
+                  <DispositivoUnico
+                    putDispositivoControle={this.onChange}
+                    controlPermission={true}
+                    key={dispositivo.codDevice}
+                    dispositivo={dispositivo}
+                    value={dispositivo.value}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

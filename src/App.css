@@ -183,9 +183,11 @@ body {
     padding-left: 15px;
   }
 }
-#section1 {
+#backgroundDemonstracao {
+  display: flex;
+  align-items: center;
   background-image: url("./svg/newcity.svg");
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat;
 }
 @keyframes logoanimation {
@@ -323,4 +325,8 @@ body {
     rgba(66, 66, 66, 0.2) 0px 1px 4px;
   height: 60px;
   width: 60px;
+}
+
+#cidadeBackground {
+  position: fixed;
 }
