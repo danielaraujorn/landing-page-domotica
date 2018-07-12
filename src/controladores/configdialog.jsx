@@ -1,140 +1,157 @@
-import React, {Component} from 'react'
-import Dialog from 'material-ui/Dialog'
-import ActionSettings from 'material-ui/svg-icons/action/settings'
-import {grey400} from 'material-ui/styles/colors'
-import IconButton from 'material-ui/IconButton'
-import FlatButton from 'material-ui/FlatButton'
-import Toggle from 'material-ui/Toggle'
-import constantes from '../constantes'
-import {isLight,rgbxToHex} from '../utils'
-import ColorPicker from './colorpicker'
-import Intensidade from './intensidade'
+import React, { Component } from "react";
+import Dialog from "material-ui/Dialog";
+import ActionSettings from "material-ui/svg-icons/action/settings";
+import { grey400 } from "material-ui/styles/colors";
+import IconButton from "material-ui/IconButton";
+import FlatButton from "material-ui/FlatButton";
+import Toggle from "material-ui/Toggle";
+import ColorPicker from "./colorpicker";
+import Intensidade from "./intensidade";
+import MyToggle from "./toggle";
+const SliderComponent = props => (
+  <Intensidade
+    key={props.key}
+    onChange={props.onChange}
+    tag={props.controller.tag}
+    min={props.controller.min}
+    max={props.controller.max}
+    step={props.controller.step}
+    value={props.controller.value}
+  />
+);
+
+const RgbxComponent = props => (
+  <ColorPicker
+    rgbx={true}
+    onChange={props.onChange}
+    tag={props.controller.tag}
+    step={0.02}
+    key={props.key}
+    codAndKey={props.codNode + props.controller.key}
+    value={props.controller.value || { r: 255, g: 0, b: 0, x: 0.5 }}
+  />
+);
+
+const RgbComponent = props => (
+  <ColorPicker
+    rgbx={false}
+    key={props.key}
+    tag={props.controller.tag}
+    step={0.02}
+    onChange={props.onChange}
+    codAndKey={props.codNode + props.controller.key}
+    value={props.controller.value}
+  />
+);
+
+const ToggleComponent = props => (
+  <MyToggle
+    key={props.key}
+    onChange={props.onChange}
+    tag={props.controller.tag}
+  />
+);
+
+const controladores = {
+  slider: props => SliderComponent(props),
+  rgbx: props => RgbxComponent(props),
+  rgb: props => RgbComponent(props),
+  toggle: props => ToggleComponent(props)
+};
 
 export default class ConfigDialog extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      open: false,
-      value:this.props.value,
-      estado:1,
-    }
+      open: false
+    };
   }
   handleOpen = () => {
-    this.setState({open: true})
-  }
+    this.setState({ open: true });
+  };
   handleClose = () => {
-    this.setState({open: false})
-  }
-  exibirOValor=(html,tipo)=>{
-    return (<div style={{fontSize:18}}>{this.props.nome}{html}</div>)
-  }
-  onChangeValue=(newValue)=>{
-    this.setState({value: newValue})
-    this.props.onChange(newValue,this.state.estado)
-  }
-  handleOn=(event,checked) => {
-    if(event.target.checked===true){
-      this.props.onChange(this.state.value,0)
-      this.setState({estado: 0})
-    }else if(this.state.value!==0){
-      this.props.onChange(this.state.value,1)
-      this.setState({estado: 1})
-    }
-  }
+    this.setState({ open: false });
+  };
   render() {
-    let styletoggle, vartoggle
-    if(this.state.estado===0){
-      vartoggle=false
-      styletoggle=''
-    }
-    else if (this.state.estado===1){
-      vartoggle=true
-      styletoggle=''
-    }
-    else{
-      vartoggle=false
-      styletoggle = {
-        thumbOff: {
-          backgroundColor: '#ffcccc',
-        },
-        trackOff: {
-          backgroundColor: '#ff9d9d',
-        },
-        thumbSwitched: {
-          backgroundColor: 'red',
-        },
-        trackSwitched: {
-          backgroundColor: '#ff9d9d',
-        },
-      }
-    }
+    // let styletoggle, vartoggle
+    let toggle = this.props.controllers.find(({ type }) => (type = "onoff"));
+    // console.log(toggle)
+    // if (toggle.value === 0) {
+    //   vartoggle = false
+    //   styletoggle = ''
+    // } else if (toggle.value === 1) {
+    //   vartoggle = true
+    //   styletoggle = ''
+    // } else {
+    //   vartoggle = false
+    //   styletoggle = {
+    //     thumbOff: {
+    //       backgroundColor: '#ffcccc',
+    //     },
+    //     trackOff: {
+    //       backgroundColor: '#ff9d9d',
+    //     },
+    //     thumbSwitched: {
+    //       backgroundColor: 'red',
+    //     },
+    //     trackSwitched: {
+    //       backgroundColor: '#ff9d9d',
+    //     },
+    //   }
+    // }
     const actions = [
-      <FlatButton
-        label="Ok"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <Toggle onTouchTap={this.handleOn.bind(this)} disabled={this.state.disabled} className="floatrightnomargin toggleswitch" toggled={vartoggle}
-      thumbStyle={styletoggle.thumbOff}
-      trackStyle={styletoggle.trackOff}
-      thumbSwitchedStyle={styletoggle.thumbSwitched}
-      trackSwitchedStyle={styletoggle.trackSwitched} />,
-    ]
-    let exibirValor= null
-    let tipoconfiguracoes = null
-    if(this.props.tipo===constantes.tipos.rgb){
-      let inhex=null
-      if(this.state.value)
-        inhex=rgbxToHex(this.state.value)
-      exibirValor=this.exibirOValor(<div style={{fontWeight:"500",textTransform:"uppercase",float:"right",color:inhex,backgroundColor:isLight(inhex),padding:"0 10px"}}>{inhex}</div>,this.props.tipo)
-      tipoconfiguracoes=(
-        <ColorPicker step={0.1} onChange={this.onChangeValue} value={this.state.value}/>
-      )
-    }
-    else if(this.props.tipo===constantes.tipos.arCondicionado){
-      exibirValor=this.exibirOValor(<div style={{float:"right"}}>{this.state.value}°C</div>)
-      tipoconfiguracoes=(
-        <Intensidade
-          min={16}
-          max={30}
-          step={1}
-          value={this.state.value}
-          onChange={this.onChangeValue}
-        />
-      )
-    }
-    else if(this.props.tipo===constantes.tipos.intensidade){
-      exibirValor=this.exibirOValor(<div style={{float:"right"}}>{Math.round(this.state.value/2.55)}%</div>)
-      tipoconfiguracoes=(
-        <Intensidade
-          min={0}
-          max={255}
-          step={25.5}
-          value={this.state.value}
-          onChange={this.onChangeValue}
-        />
-      )
-    }
-    if(this.props.tipo){
-      return (
-          <div>
-            <IconButton className="actioncontroles" onTouchTap={this.handleOpen} >
-              <ActionSettings color={grey400} />
-            </IconButton>
-            <Dialog
-              className="dialogcontroles"
-              title={exibirValor}
-              actions={actions}
-              modal={false}
-              open={this.state.open}
-              onRequestClose={this.handleClose}
-              autoScrollBodyContent={true}
-            >
-              {tipoconfiguracoes}
-            </Dialog>
-          </div>
-      )
-    }
-    else return (<div></div>)
+      !this.props.controlPermission && (
+        <div
+          className="floatrightnomargin toggleswitch"
+          style={{
+            margin: 0,
+            padding: 8,
+            color: "#f44"
+            // padding: '5px 10px',
+          }}
+        >
+          não há permissão de controle
+        </div>
+      ),
+      <FlatButton label="Ok" primary={true} onTouchTap={this.handleClose} />,
+      <Toggle
+        onTouchTap={e =>
+          this.props.onChange(toggle.key, Boolean(!e.target.checked))
+        }
+        // disabled={this.state.disabled}
+        className="floatrightnomargin toggleswitch"
+        toggled={Boolean(toggle.value)}
+        // thumbStyle={styletoggle.thumbOff}
+        // trackStyle={styletoggle.trackOff}
+        // thumbSwitchedStyle={styletoggle.thumbSwitched}
+        // trackSwitchedStyle={styletoggle.trackSwitched}
+      />
+    ];
+    return (
+      <div>
+        <IconButton className="actioncontroles" onClick={this.handleOpen}>
+          <ActionSettings color={grey400} />
+        </IconButton>
+        <Dialog
+          className="dialogcontroles"
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+          autoScrollBodyContent={true}
+        >
+          {this.props.controllers.map(
+            item =>
+              controladores[item.type] &&
+              controladores[item.type]({
+                key: item.key,
+                codNode: this.props.codNode,
+                controller: item,
+                onChange: value => this.props.onChange(item.key, value)
+              })
+          )}
+        </Dialog>
+      </div>
+    );
   }
 }

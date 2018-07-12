@@ -2,15 +2,13 @@ import React, { Component } from "react";
 import "./App.css";
 import "./bootstrap.min.css";
 import logo from "./logo.svg";
-import Exibicao from "./demonstracao";
+import Exibicao from "./demonstracao/demonstracao";
 import Historico from "./historico";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import mobile from "./handMobile.png";
 import lineChart from "./line-chart.svg";
 import connection from "./connection.svg";
 import paper from "./paper.svg";
-import cidade from "./svg/newcity.svg";
-import zIndex from "material-ui/styles/zIndex";
 
 injectTapEventPlugin();
 class App extends Component {
