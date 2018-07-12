@@ -57,12 +57,12 @@ export default class DispositivoUnico extends Component {
         >
           <div>
             <div style={{ padding: "0 12px" }} className="col-xs-12">
-              <div style={{ padding: 0 }} className="col-xs-8">
+              <div style={{ padding: 0 }} className="col-xs-7">
                 <h5 style={{ padding: 0, fontSize: 16, textAlign: "left" }}>
                   {this.props.dispositivo.name}
                 </h5>
               </div>
-              <div style={{ padding: 0 }} className="col-xs-4">
+              <div style={{ padding: 0 }} className="col-xs-5">
                 {this.props.dispositivo.controllers &&
                 this.props.dispositivo.controllers.some(
                   item => item.type === "onoff"

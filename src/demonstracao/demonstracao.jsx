@@ -162,7 +162,7 @@ export default class exibicao extends Component {
     this.setState({
       backgroundAjustes: {
         size: bounds.width * 5.4,
-        x: bounds.width * 0.59,
+        x: bounds.width * 0.5,
         y: bounds.width * 0.54
       }
     });
@@ -212,7 +212,7 @@ export default class exibicao extends Component {
               <div
                 style={{
                   padding: 10,
-                  backgroundColor: "#eee",
+                  backgroundColor: "#ccc",
                   borderRadius: 2
                 }}
                 className="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1"

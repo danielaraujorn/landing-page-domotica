@@ -32,7 +32,6 @@ export default class Casa extends Component {
           this.props.quarto2.find(({ type }) => type === "rgbx").value
         ) + "cc"
       : "#111111";
-    let janelaDaSala = this.props.janela;
 
     return (
       <div>

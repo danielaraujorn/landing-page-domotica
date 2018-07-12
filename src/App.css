@@ -186,9 +186,10 @@ body {
 #backgroundDemonstracao {
   display: flex;
   align-items: center;
+  background-color: #bfd760;
   background-image: url("./svg/newcity.svg");
   /* background-size: cover; */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 @keyframes logoanimation {
   from {
