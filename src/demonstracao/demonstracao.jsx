@@ -162,8 +162,8 @@ export default class exibicao extends Component {
     this.setState({
       backgroundAjustes: {
         size: bounds.width * 5.4,
-        x: bounds.width * 0.5,
-        y: bounds.width * 0.54
+        x: bounds.width * (window.screen.width < 768 ? -0.1 : 0.5),
+        y: bounds.width * (window.screen.width < 768 ? 0.05 : 0.54)
       }
     });
   };
